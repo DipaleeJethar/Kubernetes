@@ -1,0 +1,26 @@
+Replication Controller:
+A Replication Controller is one of the older controllers in Kubernetes and is responsible for maintaining 
+a specified number of replicas for a pod. It uses the replicas field to define the desired number of identical pod replicas.
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-replication-controller
+spec:
+  replicas: 3
+  selector:
+    app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-container
+          image: my-image
+
+In this example, the Replication Controller ensures that three replicas of the pod with the label app: my-app are running.
+
+-Replication Controller uses equality-based selectors.
+
+-Replication Controller uses matchLabels for label matching.
