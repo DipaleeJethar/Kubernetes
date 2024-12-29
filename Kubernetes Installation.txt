@@ -1,3 +1,22 @@
+Kubernetes is an open-source system that automates the management, deployment, and scaling of containerized applications: 
+
+What it does
+	Kubernetes automates tasks like: 
+	Deploying applications 
+	Rolling out changes to applications 
+	Scaling applications up and down 
+	Monitoring applications 
+	Configuring applications 
+	Maintaining and tracking resource allocation 
+
+How it works
+	Kubernetes manages a cluster of compute instances and schedules containers to run on the cluster. 
+	Containers are run in logical groupings called pods. 
+
+Who created it
+	Google originally designed Kubernetes, but it's now maintained by a worldwide community of contributors.
+	The Cloud Native Computing Foundation (CNCF) holds the trademark.
+
 ----------Kubernetes Installation--------------
 
 (Run on both nodes)
