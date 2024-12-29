@@ -1,0 +1,29 @@
+DaemonSet
+A DaemonSet defines Pods that provide node-local facilities. These might be fundamental to the operation of your cluster, 
+such as a networking helper tool, or be part of an add-on.
+A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. 
+As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, 
+those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.
+
+
+DaemonSet.YAML
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+    name: daemonwala
+    labels:
+       app: promi
+spec:
+   selector:
+       matchLabels:
+        app: promi
+   template:
+     metadata:
+         labels:
+            app: promi
+     spec:
+       containers:
+         - name: daemonwala
+           image: influxdb
+           ports:
+             - containerPort: 80
