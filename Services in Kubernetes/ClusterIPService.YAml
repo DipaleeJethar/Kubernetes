@@ -1,4 +1,4 @@
-Create a YAML file for ClusterIPService.YAML (LoadBlancerService.yaml):
+Create a YAML file for ClusterIPService.YAML (ClusterIPService.yaml):
 
 apiVersion: v1
 kind: Service
