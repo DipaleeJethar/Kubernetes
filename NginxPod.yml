@@ -1,0 +1,22 @@
+Create a YAML file for nginx pod (NginxPod.yaml):
+
+apiVersion: v1
+kind: Pod
+metadata:
+name: nginxpod
+labels:
+   app: myapp
+spec:
+    containers:
+        - name: nginxcontainer
+          image: nginx
+          ports:
+            - containerPort: 80
+---------------------------------------------------------------------------------------------
+
+Apply the YAML file using below command:
+	kubectl apply -f <file_name>
+	kubectl apply -f NginxPod.YAml
+
+Verify the Pod is Running using below command:
+	kubectl get pods
