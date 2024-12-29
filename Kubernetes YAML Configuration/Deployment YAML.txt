@@ -1,0 +1,16 @@
+Deployment YAML:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-name
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: app-label
+    spec:
+      containers:
+        - name: container-name
+          image: image-name
