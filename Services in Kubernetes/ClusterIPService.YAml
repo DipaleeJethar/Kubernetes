@@ -1,0 +1,22 @@
+Create a YAML file for ClusterIPService.YAML (LoadBlancerService.yaml):
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: clusterIPservice
+spec:
+  type: ClusterIP
+  selector:
+       app: myapp
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+----------------------------------------------------------------------------------
+
+Apply the YAML file using below command: 
+	kubectl apply -f ClusterIPService.yml
+
+To verify or see the Services use below command:
+	kubectl get services
+

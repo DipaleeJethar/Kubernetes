@@ -1,0 +1,29 @@
+Kubernetes Service Type
+
+1. ClusterIP Services
+ClusterIP Services assign an IP address that can be used to reach the Service from within your cluster. 
+This type doesn’t expose the Service externally.
+ClusterIP is the default service type used when you don’t specify an alternative option.
+It’s the most common kind of service you’ll use as it enables simple internal networking for your workloads.
+
+2. NodePort Services
+NodePort Services are exposed externally through a specified static port binding on each of your Nodes. 
+Hence, you can access the Service by connecting to the port on any of your cluster’s Nodes. 
+NodePort Services are also assigned a cluster IP address that can be used to reach them within the cluster, just like ClusterIP Services.
+Use of NodePort Services is generally unadvisable. 
+They have functional limitations and can lead to security issues:
+	Anyone who can connect to the port on your Nodes can access the Service.
+	Each port number can only be used by one NodePort Service at a time to prevent conflicts.
+	Every Node in your cluster has to listen to the port by default, even if they’re not running a Pod that’s included in the Service.
+	No automatic load-balancing: clients are served by the Node they connect to.
+When a NodePort Service is used, it’s generally to facilitate the use of your own load-balancing solution that reroutes traffic from outside the cluster.
+NodePorts can also be convenient for temporary debugging, development, and troubleshooting scenarios where you need to quickly test different configurations.
+
+3. LoadBalancer Services
+LoadBalancer Services are exposed outside your cluster using an external load balancer resource. 
+This requires a connection to a load balancer provider, typically achieved by integrating your cluster with your cloud environment. 
+Creating a LoadBalancer service will then automatically provision a new load balancer infrastructure component in your cloud account. 
+This functionality is automatically configured when you use a managed Kubernetes service such as Amazon EKS or Google GKE.
+Once you’ve created a LoadBalancer service, you can point your public DNS records to the provisioned load balancer’s IP address. 
+This will then direct traffic to your Kubernetes Service. Therefore, LoadBalancers are the Service type you should normally use 
+when you need an app to be accessible outside Kubernetes.

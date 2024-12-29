@@ -1,0 +1,23 @@
+
+Create a YAML file for NodePortService.YAML (LoadBlancerService.yaml):
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: nodeportservice
+spec:
+  type: NodePort
+  selector:
+       app: myapp
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+     nodePort: 30001
+----------------------------------------------------------------------------------
+
+Apply the YAML file using below command: 
+	kubectl apply -f NodePortService.yml
+
+To verify or see the Services use below command:
+	kubectl get services

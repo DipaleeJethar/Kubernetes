@@ -1,0 +1,22 @@
+Create a YAML file for LoadBalancerService..YAML (LoadBlancerService.yaml):
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: loadbalancerservice
+spec:
+  type: LoadBalancer
+  selector:
+       app: myapp
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+----------------------------------------------------------------------------------
+
+Apply the YAML file using below command: 
+	kubectl apply -f LoadBalancerService.yml
+
+To verify or see the Services use below command:
+	kubectl get services
+
