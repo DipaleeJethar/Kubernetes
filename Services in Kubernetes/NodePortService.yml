@@ -1,5 +1,5 @@
 
-Create a YAML file for NodePortService.YAML (LoadBlancerService.yaml):
+Create a YAML file for NodePortService.YAML (NodePortService.yaml):
 
 apiVersion: v1
 kind: Service
